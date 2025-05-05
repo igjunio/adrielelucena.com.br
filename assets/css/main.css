@@ -135,7 +135,7 @@ h6 {
 }
 
 .header .header-social-links a:hover {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .header .header-social-links a i {
@@ -205,7 +205,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--primary-color);
+    color: var(--accent-color);
   }
 
   .navmenu .dropdown ul {
@@ -898,13 +898,11 @@ section,
   transition: 0.5s;
   margin: 10px;
   background: var(--secondary-color);
-  border: 2px solid var(--primary-color);
   color: var(--text-color);
 }
 
 .call-to-action .cta-btn:hover {
   background: var(--primary-color);
-  border: 2px solid var(--primary-color);
 }
 
 /*--------------------------------------------------------------
