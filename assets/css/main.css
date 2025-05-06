@@ -608,16 +608,16 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--text-color);
+  background-color: var(--secondary-color);
   padding: 160px 0 60px 0;
   text-align: center;
   position: relative;
 }
 
 .page-title h1 {
+  font-family: 'Raleway-Black';
   font-size: 42px;
-  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -628,8 +628,12 @@ h6 {
   justify-content: center;
   padding: 0;
   margin: 0;
+  font-family: 'Raleway-Regular';
   font-size: 16px;
-  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol a {
+  color: var(--primary-color);
 }
 
 .page-title .breadcrumbs ol li+li {
@@ -640,7 +644,7 @@ h6 {
   content: "/";
   display: inline-block;
   padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, var(--primary-color), transparent 70%);
 }
 
 /*--------------------------------------------------------------
@@ -1499,6 +1503,21 @@ section,
   height: auto;
 }
 
+.team .slider-nav span {
+  margin-right: 5px;
+}
+
+.team .slider-nav span a {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  font-family:'Raleway-Bold';
+  font-size: 12px;
+  padding: 5px;
+}
+
 .team .slider-nav a {
   width: 40px;
   height: 40px;
@@ -1509,18 +1528,20 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 5px;
 }
 
+.team .slider-nav span a i,
 .team .slider-nav a i {
   color: var(--text-color);
 }
 
-.team .slider-nav a:hover {
-  background-color: color-mix(in srgb, var(--secondary-color) 90%, white 15%);
+.team .slider-nav span a:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
-.team .slider-nav a:first-child {
-  margin-right: 5px;
+.team .slider-nav a:hover {
+  background-color: color-mix(in srgb, var(--secondary-color) 90%, white 15%);
 }
 
 /*--------------------------------------------------------------
@@ -1575,4 +1596,104 @@ section,
 .contact .info-item:hover i {
   background: var(--secondary-color);
   color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-family:'Raleway-Bold';
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -100%;
+  z-index: 3;
+  transition: all ease-in-out 0.5s;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  padding: 15px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: 0;
 }
